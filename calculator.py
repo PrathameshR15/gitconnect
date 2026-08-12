@@ -28,12 +28,25 @@ def main():
     print("4. Divide")
     print("5. Power")
     print("6. Modulo")
+    print("7. View History")
+    
+    history = []
     
     while True:
-        choice = input("Enter choice (1/2/3/4/5/6) or 'q' to quit: ")
+        choice = input("Enter choice (1/2/3/4/5/6/7) or 'q' to quit: ")
         if choice.lower() == 'q':
             break
             
+        if choice == '7':
+            if not history:
+                print("No history yet.")
+            else:
+                print("\n--- Calculation History ---")
+                for entry in history:
+                    print(entry)
+                print("---------------------------\n")
+            continue
+
         if choice in ('1', '2', '3', '4', '5', '6'):
             try:
                 num1 = float(input("Enter first number: "))
@@ -42,18 +55,22 @@ def main():
                 print("Invalid input. Please enter numbers.")
                 continue
 
+            result = ""
             if choice == '1':
-                print(f"{num1} + {num2} = {add(num1, num2)}")
+                result = f"{num1} + {num2} = {add(num1, num2)}"
             elif choice == '2':
-                print(f"{num1} - {num2} = {subtract(num1, num2)}")
+                result = f"{num1} - {num2} = {subtract(num1, num2)}"
             elif choice == '3':
-                print(f"{num1} * {num2} = {multiply(num1, num2)}")
+                result = f"{num1} * {num2} = {multiply(num1, num2)}"
             elif choice == '4':
-                print(f"{num1} / {num2} = {divide(num1, num2)}")
+                result = f"{num1} / {num2} = {divide(num1, num2)}"
             elif choice == '5':
-                print(f"{num1} ^ {num2} = {power(num1, num2)}")
+                result = f"{num1} ^ {num2} = {power(num1, num2)}"
             elif choice == '6':
-                print(f"{num1} % {num2} = {modulo(num1, num2)}")
+                result = f"{num1} % {num2} = {modulo(num1, num2)}"
+            
+            print(result)
+            history.append(result)
         else:
             print("Invalid Input")
 
