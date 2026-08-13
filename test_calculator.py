@@ -1,11 +1,11 @@
 import unittest
-from calculator import add, subtract, multiply, divide, power, modulo
+from calculator import add, subtract, multiply, divide, power, modulo, square
 
 class TestCalculator(unittest.TestCase):
     def test_add(self):
         self.assertEqual(add(2, 3), 5)
         self.assertEqual(add(-1, 1), 0)
-        self.assertEqual(add(-1, 1), 10)
+        self.assertEqual(add(-1, 1), 0)
 
     def test_subtract(self):
         self.assertEqual(subtract(5, 3), 2)
@@ -26,6 +26,10 @@ class TestCalculator(unittest.TestCase):
     def test_modulo(self):
         self.assertEqual(modulo(10, 3), 1)
         self.assertEqual(modulo(5, 0), "Error! Division by zero.")
+
+    def test_square(self):
+        self.assertEqual(square(3), 9)
+        self.assertEqual(square(-4), 16)
 
 if __name__ == "__main__":
     unittest.main()
