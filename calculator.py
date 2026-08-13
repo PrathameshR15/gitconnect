@@ -12,6 +12,15 @@ def divide(x, y):
         return "Error! Division by zero."
     return x / y
 
+def power(x, y):
+    return x ** y
+
+def modulo(x, y):
+    if y == 0:
+        return "Error! Division by zero."
+    return x % y
+
+
 def main():
     print("Simple Calculator")
     print("1. Add")
