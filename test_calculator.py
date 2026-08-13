@@ -31,5 +31,8 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(square(3), 9)
         self.assertEqual(square(-4), 16)
 
+    def test_dummy(self):
+        self.assertTrue(True)
+
 if __name__ == "__main__":
     unittest.main()
